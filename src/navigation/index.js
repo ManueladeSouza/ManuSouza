@@ -1,22 +1,24 @@
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import { Home } from "../screens/Home";
-import { Sobre } from "../screens/Sobre";
-import { Album } from "../screens/Album";
-import { Notícias } from "../screens/Sobre";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+//import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-// // Simboliza a instância do Stack
-// const Stack = createNativeStackNavigator();
-// Simboliza a instância do Stack
+
+
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { Paginicial } from "../screens/Home";
+import { Produtos } from "../screens/Produtos";
+import { Sobre } from "../screens/Sobre";
+import { Noticias, noticias } from "../screens/Notícias";
+import { Contato, Login } from "../screens/Contato";
+
+//const Stack = createNativeStackNavigator();
 const MBNav = createMaterialBottomTabNavigator();
 
-// Componente base
-export const MSRootNavigation = () => {
+export const GPRootNavigation = () => {
   return (
-    <MBNav.Navigator activeColor="#fff" inactiveColor="rgba(255,255,255,0.5)">
-      <MBNav.Screen
+<MBNav.Navigator activeColor="white" inactiveColor="white" barStyle={{ backgroundColor: "#01011F"}}>      
+        <MBNav.Screen
         name="Home"
-        component={Home}
+        component={Paginicial}
         options={{
           tabBarLabel: "Home",
           tabBarIcon: ({ color }) => (
@@ -30,30 +32,41 @@ export const MSRootNavigation = () => {
         options={{
           tabBarLabel: "Sobre",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="account" color={color} size={26} />
+            <MaterialCommunityIcons name="clipboard-account" color={color} size={26} />
           ),
         }}
       />
       <MBNav.Screen
-        name="Albuns lançados"
-        component={Album}
+        name="Produtos"
+        component={Produtos}
         options={{
-          tabBarLabel: "Albuns Lançados",
+          tabBarLabel: "Produtos",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="cart" color={color} size={26} />
+          ),
+        }}
+      />
+      <MBNav.Screen
+        name="Noticias"
+        component={Noticias}
+        options={{
+          tabBarLabel: "Notícias",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="book-open-blank-variant" color={color} size={26} />
+          ),
+        }}
+      />
+      <MBNav.Screen
+        name="Contato"
+        component={Login}
+        options={{
+          tabBarLabel: "Contato",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="phone" color={color} size={26} />
           ),
         }}
       />
-      <MBNav.Screen
-        name="Notícias"
-        component={Newspaper}
-        options={{
-          tabBarLabel: "Notícias",
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="android" color={color} size={26} />
-          ),
-        }}
-      />
+     
     </MBNav.Navigator>
   );
 };

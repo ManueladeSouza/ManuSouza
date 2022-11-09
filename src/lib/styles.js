@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const MSstyles = StyleSheet.create({
+export const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#fff",
@@ -13,5 +13,9 @@ export const MSstyles = StyleSheet.create({
     },
     red: {
         color: 'red',
+    },
+    imagem:{
+        width: 400,
+        height: 200,
     }
 })

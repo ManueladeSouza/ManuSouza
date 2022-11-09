@@ -1,19 +1,12 @@
-import { Button, Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
+import { styles  } from "../lib/styles";
 
-export const Home = ({ navigation }) => (
+export const Paginicial = ({ navigation }) => (
     <View>
-        <Text>Aqui é a Home</Text>
-        <Button
-            title="Vamos para Sobre?"
-            onPress={() => navigation.navigate("Sobre")}
-        />
-        <Button
-            title="Vamos para Contato?"
-            onPress={() => navigation.navigate("Album")}
-        />
-        <Button
-            title="Vamos para Registro?"
-            onPress={() => navigation.navigate("Notícias")}
-        />
+       
+        <Image style={styles.imagem}source={{ uri:
+        'https://wallpaperaccess.com/full/1107552.jpg'}} />
+         <Text><center><h1>Bem vindos a Nike</h1></center></Text>
+   
     </View>
 )
